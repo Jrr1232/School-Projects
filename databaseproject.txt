@@ -1,0 +1,24 @@
+Create Table District (
+district_id int(2) primary key,
+Name varchar(30),
+Postcode varchar(20),
+Region varchar(20)
+);
+
+
+Create Table Facility(
+facility_id varchar(10) primary key,
+Type varchar(20),
+NumberDoctors int(3),
+NumberAmbulances int (3)
+);
+
+
+Create Table Hospital(
+hospital_id varchar(10) primary key,
+Bed_Availibity int(3), 
+district_id int(2),
+facility_id varchar(5),
+Foreign Key (district_id) references district(district_id),   
+Foreign Key (facility_id) References facility(facility_id)   
+);
